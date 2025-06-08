@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +28,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Card className="mx-auto w-[80vw] mt-10">
+          <CardHeader>
+            <CardTitle>Todo List</CardTitle>
+          </CardHeader>
+          <CardContent>{children}`</CardContent>
+        </Card>
       </body>
     </html>
   );
